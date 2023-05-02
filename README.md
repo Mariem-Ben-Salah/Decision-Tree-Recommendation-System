@@ -1,23 +1,6 @@
  
 <img src="https://img.shields.io/badge/-Python-blue?style=for-the-badge&logo=python&logoColor=white" alt="PYTHON" /> [<img src="https://img.shields.io/github/contributors/Mariem-Ben-Salah/Demo-Automation?style=for-the-badge" alt="CONTRIBUTORS" />](https://github.com/Mariem-Ben-Salah/Demo-Automation/graphs/contributors) [<img src="https://img.shields.io/github/stars/Mariem-Ben-Salah/Demo-Automation?style=for-the-badge" alt="STARS" />](https://github.com/Mariem-Ben-Salah/Demo-Automation/stargazers) [<img src="https://img.shields.io/github/forks/Mariem-Ben-Salah/Demo-Automation?style=for-the-badge" alt="FORKS" />](https://github.com/Mariem-Ben-Salah/Demo-Automation/network/members) [<img src="https://img.shields.io/github/issues/Mariem-Ben-Salah/Demo-Automation?style=for-the-badge" alt="ISSUES" />](https://github.com/Mariem-Ben-Salah/Demo-Automation/issues)
 
-# Table of Contents
-
-I. [Introduction](#introduction)
-    1. [Decision-Tree Recommendation System](#decision-tree-recommendation-system)
-    2. [Repository Structure](#repository-structure)
-    3. [Requirements](#requirements)
-II. [What to know](#What-to-know)
-    1. [Preprocessing](#preprocessing)
-        1. [Data Collection](#data-collection)
-        2. [Data Filtering](#data-filtering)
-    2. [Training](#training)
-        1. [Data Transformation](#data-transformation)
-        2. [Labeling and Annotation](#labeling-and-annotation)
-        3. [Data Analysis](#data-analysis)
-        4. [Data Visualization](#data-visualization)
-    3. [Testing](#testing)
-
 # I. Introduction
 
 ## 1. 🌳 Decision-Tree RecommendationSystem 🌳

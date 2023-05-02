@@ -16,26 +16,26 @@
     4. [Data Visualization](#Data-Visualization)
 6. [Testing](#Testing)
 
-# 1. 🌳 Decision-Tree-Recommendation-System 🌳
+## 1. 🌳 Decision-Tree-Recommendation-System 🌳
 
 This project is aimed at developing an image recommendation system based on user preferences, using Decision Trees as the main machine learning model. The project was completed as a part of a Data Mining course and implemented in Python.
 
-# 2. 📂 Repository Structure
+## 2. 📂 Repository Structure
 
 * `project_report` : The final report of the project.
 * `project.ipynb`: contains the whole code for the project.
 
-# 3. 📝 Requirements
+## 3. 📝 Requirements
 
 The packages required to run this project are mentioned in the `project.ipynb` file.
 
 The code for this project is divided into three main parts: preprocessing, training and prediction.
 
-# 4. Preprocessing
+## 4. Preprocessing
 
 The preprocessing part contains functions for collection, cleaning and preprocessing the required data.
 
-## 🐱 🐶 🐵 Data Collection 
+### 🐱 🐶 🐵 Data Collection 
 
 The project uses Kaggle, an open-licensed image platform, as the source of the dataset. The main criteria for selecting the dataset was finding relevant metadata stored in a separate CSV file along with the pictures. After careful consideration, we chose a collection of cat, dog, and monkey pictures.
 
@@ -56,43 +56,62 @@ After the cleaning, we remained with 469 rows and 8 columns in the csv file :
 - ymax
 ```
 
-## 🧹 Data Filtering
+### 🧹 Data Filtering
 
 After Preprocessing the dataset, we filtered the relevant information by dropping duplicates in the csv file (using *.drop_duplicate()) and removing ".xml" files that were irrelevant for our case (we made sure to include only the *.jpg* files in our _for_ loop)
 
-# 5. Training
+## 5. Training
 
 The training phase uses the cleaned data to train the machine learning models. It contains functions for transforming and labeling the data.
 
-## 🔄 Data Transformation 
+### 🔄 Data Transformation 
 
 The Transformation part consisted of extracting more useful information from the training set. In order to do that, we had to :
+
 1. Convert the filtered csv file to a json
 2. Create a data frame from the loaded json information
 3. Choose the informations that we want to extract : we decided ended up choosing `the animal's size inside the image` and `the dominating colors in the picture`. 
 
 *Animal's size inside the image*
+
 For that, we created two new columns in the dataframe :
+
 ■ tailleX = xmax - xmin.
+
 ■ tailleY = ymax - ymin.
 
 This processing gave us a lot of distinct values, and we realized that they would be difficult to manage with label encoding. Therefore, we found it judicious to divide the *tailleX* and *tailleY* sizes into 3 categories:
+
 ■ Object size less than 30% of the image size: small ⇒ value 0 assigned.
+
 ■ Object size between 30% and 70% of the image size: medium ⇒ value 1 assigned.
+
 ■ Object size greater than 70% of the image size: large ⇒ value 2 assigned.
 
 *Dominant Colors*
+
 For that, we performed clustering algorithms :
+
 ■ Mini Batch K-means, with 3 clusters.
+
 --> we imported conversion functions from webcolors, mainly css3_hex_to_names and hex_to_rgb.
-This processing esulted on creating a *couleur1* column where we stored the dominant color for every image in the training set.
+
+This processing resulted on creating a *couleur1* column where we stored the dominant color for every image in the training set.
+
+[![colour column](https://ibb.co/vZTY4qZ)]
+
+*Likes*
+
+the `likes` column was generated, which contains the value "favorite" (1) or "not favorite" (0), randomly assigned to simulate user preferences. A user preference profile was then built.
+
+[![Likes column](https://ibb.co/6NzXHKR)]
 
 At the end of these steps, the dataframe contained the following columns : 
 
-*Likes*
-the `likes` column was generated, which contains the value "favorite" (1) or "not favorite" (0), randomly assigned to simulate user preferences. A user preference profile was then built.
+[![dataframe after the added columns](https://ibb.co/31wHhQh)]
 
-## 🔍 Labeling and Annotation: 
+
+### 🔍 Labeling and Annotation: 
 
 Before continuing our analysis, we annotated our data using the LabelEncoder imported from sklearn.preprocessing. 
 ``` python
@@ -108,22 +127,30 @@ In this specific case, the "width" column likely contains text data (e.g. "small
 
 The same process was done for the other columns in the dataframe.
 
-## 📈 Data Analysis: 
+### 📈 Data Analysis: 
 
 To simulate a user who has chosen their favorite images, we generated a "likes" column containing either "favorite" or "not favorite," which we later inserted into our resultframe. This column was created by randomly generating an integer 0 or 1. If the integer is equal to 1, then we add "favorite" to the column and vice versa.
 
-## 📊 Data Visualization: 
+### 📊 Data Visualization: 
 
 We tried to visualize the most relevant information. To do this, we implemented:
-➔ A plot.bar to visualize the 2 properties "width" and "height":
-➔ A plot.bar to visualize the 2 properties "tailleX" and "tailleY":
-➔ A plot.bar to visualize the most frequently occurring dominant color.
+
+➔ A plot.bar to visualize the 2 properties "width" and "height"
+
+➔ A plot.bar to visualize the 2 properties "tailleX" and "tailleY"
+
+➔ A plot.bar to visualize the most frequently occurring dominant color
+
+[![results of the plot.bar](https://ibb.co/wycn7Dq)]
+
 ➔ In this example, the user tends to like images with medium width and medium height.
+
 ➔ The user tends to like objects that are medium-sized in width (tailleX) as well as objects that are either medium-sized or too tall in height (tailleY).
+
 ➔ The user likes images with the dominant color code 12.
 
 
-# 🎉 6. Testing
+## 🎉 6. Testing
 
 This final step aims to fulfill the initial objective of this project, which is to recommend to users images that they will appreciate, based on the processing already done and especially on their preferences. To do this, we decided to work with decision trees.
 

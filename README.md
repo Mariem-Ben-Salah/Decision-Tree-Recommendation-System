@@ -6,19 +6,29 @@
 I. [Introduction](#introduction)
 
     1. [Decision-Tree Recommendation System](#decision-tree-recommendation-system)
+    
     2. [Repository Structure](#repository-structure)
+    
     3. [Requirements](#requirements)
     
 II. [What to know](#What-to-know)
 
     1. [Preprocessing](#preprocessing)
+    
         1. [Data Collection](#data-collection)
+        
         2. [Data Filtering](#data-filtering)
+        
     2. [Training](#training)
+    
         1. [Data Transformation](#data-transformation)
+        
         2. [Labeling and Annotation](#labeling-and-annotation)
+        
         3. [Data Analysis](#data-analysis)
+        
         4. [Data Visualization](#data-visualization)
+        
     3. [Testing](#testing)
 
 # I. Introduction

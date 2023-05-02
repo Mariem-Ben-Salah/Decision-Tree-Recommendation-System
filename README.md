@@ -61,7 +61,7 @@ The Transformation part consisted of extracting more useful information from the
 2. Create a data frame from the loaded json information
 3. Choose the informations that we want to extract : we decided ended up choosing `the animal's size inside the image` and `the dominating colors in the picture`. 
 
-`Animal's size inside the image
+`Animal's size inside the image`
 
 For that, we created two new columns in the dataframe :
 

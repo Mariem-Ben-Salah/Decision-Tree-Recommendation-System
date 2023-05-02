@@ -1,6 +1,18 @@
  
 <img src="https://img.shields.io/badge/-Python-blue?style=for-the-badge&logo=python&logoColor=white" alt="PYTHON" /> [<img src="https://img.shields.io/github/contributors/Mariem-Ben-Salah/Demo-Automation?style=for-the-badge" alt="CONTRIBUTORS" />](https://github.com/Mariem-Ben-Salah/Demo-Automation/graphs/contributors) [<img src="https://img.shields.io/github/stars/Mariem-Ben-Salah/Demo-Automation?style=for-the-badge" alt="STARS" />](https://github.com/Mariem-Ben-Salah/Demo-Automation/stargazers) [<img src="https://img.shields.io/github/forks/Mariem-Ben-Salah/Demo-Automation?style=for-the-badge" alt="FORKS" />](https://github.com/Mariem-Ben-Salah/Demo-Automation/network/members) [<img src="https://img.shields.io/github/issues/Mariem-Ben-Salah/Demo-Automation?style=for-the-badge" alt="ISSUES" />](https://github.com/Mariem-Ben-Salah/Demo-Automation/issues)
 
+# Table of contents
+
+- [Introduction](#Decision-Tree-Recommendation-System)
+- [Repository Structure](#Repository Structure)
+- [Requirements](#Requirements)
+- [Preprocessing](#Preprocessing)
+- [Data Collection](#Data Collection)
+- [Data Filtering](#Data Filtering)
+- [Data Transformation](#Data Transformation)
+- [Labeling and Annotation](#Labeling and Annotation)
+
+
 🌳 # Decision-Tree-Recommendation-System 🌳
 
 This project is aimed at developing an image recommendation system based on user preferences, using Decision Trees as the main machine learning model. The project was completed as a part of a Data Mining course and implemented in Python.
@@ -20,33 +32,47 @@ The code for this project is divided into three main parts: preprocessing, train
 
 The preprocessing part contains functions for collection, cleaning and preprocessing the required data.
 
-## 🐱 🐶 🐵 - Data Collection 
+## - 🐱 🐶 🐵 Data Collection 
 
 The project uses Kaggle, an open-licensed image platform, as the source of the dataset. The main criteria for selecting the dataset was finding relevant metadata stored in a separate CSV file along with the pictures. After careful consideration, we chose a collection of cat, dog, and monkey pictures.
 
 The dataset is divided into two main folders : 
-- Train : contains the images used for the training phase
+- Train : contains the 1309 images used for the training phase
 - Test : contains the images used for the testing phase
 
-After the cleaning, we remained with 469 rows and 8 columns `(Width, Height, Class (cat, dog, monkey), xmin, ymin, xmax, ymax)` in the csv file.
+After the cleaning, we remained with 469 rows and 8 columns in the csv file :
+
+```
+- filename 
+- Width 
+- Height
+- Class : cat, dog, monkey
+- xmin
+- ymin
+- xmax
+- ymax
+```
+## -  🧹 Data Filtering
+
+After Preprocessing the dataset, we filtered the relevant information by dropping duplicates in the csv file (using *.drop_duplicate()) and removing ".xml" files that were irrelevant for our goal (we made sure to include only the *.jpg* files in our _for_ loop)
 
 # 2. Training
 
-The training phase uses the preprocessed data to train the machine learning models. It contains functions for filtering, transforming and labeling the data.
+The training phase uses the cleaned data to train the machine learning models. It contains functions for transforming and labeling the data.
 
-🧹 # Data Filtering And Data Transformation: 
-
-After Preprocessing the dataset, we filtered the relevant information, such as dropping duplicates in the csv file, removing ".xml" files that were irrelevant for our goal.
+# 🔄 Data Transformation 
 
 The Transformation part consisted of extracting more useful information from the training set. In order to do that, we had to :
 1. Convert the filtered csv file to a json
 2. Create a data frame from the loaded json information
-3. Fix the informations that we want to extract : in our case we decided to go with the animal's size inside the image and the dominating colors. 
+3. Choose the informations that we want to extract : we decided ended up choosing `the animal's size inside the image` and `the dominating colors in the picture`. 
 
 *Animal's size inside the image*
 For that, we created two new columns in the dataframe :
 ■ tailleX = xmax - xmin.
 ■ tailleY = ymax - ymin.
+
+This 
 
 *Dominant Colors*
 For that, we performed clustering algorithms :

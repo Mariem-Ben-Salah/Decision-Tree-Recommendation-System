@@ -3,9 +3,9 @@
 
 # Table of contents
 
-[Introduction](#Decision-Tree-Recommendation-System)
-[Repository Structure](#Repository Structure)
-[Requirements](#Requirements)
+- [Introduction](#Decision-Tree-Recommendation-System)
+- [Repository Structure](#Repository Structure)
+- [Requirements](#Requirements)
 1. [Preprocessing](#Preprocessing)
 - [Data Collection](#Data Collection)
 - [Data Filtering](#Data Filtering)
@@ -53,9 +53,10 @@ After the cleaning, we remained with 469 rows and 8 columns in the csv file :
 - xmax
 - ymax
 ```
+
 ## -  🧹 Data Filtering
 
-After Preprocessing the dataset, we filtered the relevant information by dropping duplicates in the csv file (using *.drop_duplicate()) and removing ".xml" files that were irrelevant for our goal (we made sure to include only the *.jpg* files in our _for_ loop)
+After Preprocessing the dataset, we filtered the relevant information by dropping duplicates in the csv file (using *.drop_duplicate()) and removing ".xml" files that were irrelevant for our case (we made sure to include only the *.jpg* files in our _for_ loop)
 
 # 2. Training
 
@@ -73,47 +74,74 @@ For that, we created two new columns in the dataframe :
 ■ tailleX = xmax - xmin.
 ■ tailleY = ymax - ymin.
 
-This 
+This processing gave us a lot of distinct values, and we realized that they would be difficult to manage with label encoding. Therefore, we found it judicious to divide the *tailleX* and *tailleY* sizes into 3 categories:
+■ Object size less than 30% of the image size: small ⇒ value 0 assigned.
+■ Object size between 30% and 70% of the image size: medium ⇒ value 1 assigned.
+■ Object size greater than 70% of the image size: large ⇒ value 2 assigned.
 
 *Dominant Colors*
 For that, we performed clustering algorithms :
 ■ Mini Batch K-means, with 3 clusters.
 --> we imported conversion functions from webcolors, mainly css3_hex_to_names and hex_to_rgb.
+This processing esulted on creating a *couleur1* column where we stored the dominant color for every image in the training set.
+
+At the end of these steps, the dataframe contained the following columns : 
 
 *Likes*
 the `likes` column was generated, which contains the value "favorite" (1) or "not favorite" (0), randomly assigned to simulate user preferences. A user preference profile was then built.
 
 🔍 # Labeling and Annotation: 
-The labeling part was mainly regarding the first transformation we did (the size of the animal). In fact, we compared both the height and the weight of the animal with the weigth and height of the picture and if :
-```
-■ Object size < 30% image size then height/weight = small ⇒ 0.
-■ 70% image size > Object size > 30% image size then height/weight = medium ⇒ 1.
-■ Object size > 70% image size then height/weight = large ⇒2.
+
+Before continuing our analysis, we annotated our data using the LabelEncoder imported from sklearn.preprocessing. 
+``` python
+le1 = LabelEncoder()
+dataframe["width"] = le1.fit_transform(dataframe["width"])
 ```
 
-The column "couleur1" was created to storage the dominant color in every picture
+These lines of code create a LabelEncoder object called le1 and applies it to the "width" column of the dataframe object.
 
-At the end of this step, the dataframe contained the following columns :  width | height | class | tailleX | tailleY | couleur1 |
+A LabelEncoder is a class from the sklearn.preprocessing module that can transform categorical data (i.e. text data) into numerical data that machine learning algorithms can work with. It does this by assigning a unique integer value to each unique category in the data.
+
+In this specific case, the "width" column likely contains text data (e.g. "small", "medium", "large"), so le1.fit_transform() is being used to transform this data into numerical values. The fit_transform() method first fits the encoder to the data (i.e. learns the unique categories in the data) and then transforms the data into numerical values using the learned categories. The resulting transformed data is then assigned back to the "width" column in the original dataframe object.
+
+The same process was done for the other columns in the dataframe.
 
 📈 # Data Analysis: 
 
-A "likes" column was generated to simulate user preferences, and the team built a user-preference profile.
+To simulate a user who has chosen their favorite images, we generated a "likes" column containing either "favorite" or "not favorite," which we later inserted into our resultframe. This column was created by randomly generating an integer 0 or 1. If the integer is equal to 1, then we add "favorite" to the column and vice versa.
 
-📊 # Data Visualization: The team used bar plots to visualize relevant information like image size, object size, and dominant color.
+📊 # Data Visualization: 
 
-🤖💡🔍🌳 #  Recommendation System: The main objective of the project was to build a recommendation system based on user preferences. The team used Decision Trees as the main machine learning model for classification and regression.
-
-Overall, the project was successful in building an image recommendation system that could recommend images based on user preferences.
-## 🤖 Introduction
-
-The demo is a process that typically occurs once a month. During this meeting, team members and product owners showcase what they've been working on during the previous period. Despite its simplicity, this process can sometimes take up a significant amount of time on the agenda, which is why we have decided to automate it.
-
-
-In this project, a recommendation system was implemented using a decision tree. The decision tree is a non-parametric supervised learning method used for classification and regression tasks. The goal is to create a model that can predict the value of a target variable by considering the rules of simple decisions derived from the given characteristics. The deeper the tree, the more complex the decision-making rules, and the better the model.
+We tried to visualize the most relevant information. To do this, we implemented:
+➔ A plot.bar to visualize the 2 properties "width" and "height":
+➔ A plot.bar to visualize the 2 properties "tailleX" and "tailleY":
+➔ A plot.bar to visualize the most frequently occurring dominant color.
+➔ In this example, the user tends to like images with medium width and medium height.
+➔ The user tends to like objects that are medium-sized in width (tailleX) as well as objects that are either medium-sized or too tall in height (tailleY).
+➔ The user likes images with the dominant color code 12.
 
 
+# 🎉 3. Testing
 
+This final step aims to fulfill the initial objective of this project, which is to recommend to users images that they will appreciate, based on the processing already done and especially on their preferences. To do this, we decided to work with decision trees.
 
+Indeed, decision trees are a non-parametric supervised learning method used for classification and regression. The goal is to create a model that predicts the value of a target variable by learning simple decision rules deduced from the data characteristics.
+
+In our case, decision trees learn from the data to approximate the set of data to propose to a user. The deeper the tree, the more complex the decision rules are, and the more adapted the model is.
+
+Why did we choose to work with this method ?
+- It is easy to understand and interpret. Trees can be visualized.
+- It requires little data preparation. Other techniques often require data normalization, dummy variables creation, and empty values removal.
+- It can handle multi-output problems.
+
+Implementation of this method in the project
+
+We first imported DecisionTreeClassifier with these two lines:
+``` python
+from sklearn import tree
+Xxx = tree.DecisionTreeClassifier()
+```
+Then, we applied this classifier to our data with `xxxx = xxxx.fit()`
 
 
 Overall, this project demonstrates the effectiveness of decision trees as a tool for building recommendation systems, as well as the importance of careful feature selection and data preprocessing for achieving accurate predictions.

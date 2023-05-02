@@ -3,14 +3,15 @@
 
 # Table of contents
 
-- [Introduction](#Decision-Tree-Recommendation-System)
-- [Repository Structure](#Repository Structure)
-- [Requirements](#Requirements)
-- [Preprocessing](#Preprocessing)
-- [Data Collection](#Data Collection)
-- [Data Filtering](#Data Filtering)
-- [Data Transformation](#Data Transformation)
-- [Labeling and Annotation](#Labeling and Annotation)
+[Introduction](#Decision-Tree-Recommendation-System)
+[Repository Structure](#Repository Structure)
+[Requirements](#Requirements)
+[Preprocessing](#Preprocessing)
+[Data Collection](##Data Collection)
+[Data Filtering](##Data Filtering)
+[Training](#Training)
+[Data Transformation](##Data Transformation)
+[Labeling and Annotation](##Labeling and Annotation)
 
 
 🌳 # Decision-Tree-Recommendation-System 🌳

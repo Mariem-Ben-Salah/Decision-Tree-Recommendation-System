@@ -1,18 +1,17 @@
  
 <img src="https://img.shields.io/badge/-Python-blue?style=for-the-badge&logo=python&logoColor=white" alt="PYTHON" /> [<img src="https://img.shields.io/github/contributors/Mariem-Ben-Salah/Demo-Automation?style=for-the-badge" alt="CONTRIBUTORS" />](https://github.com/Mariem-Ben-Salah/Demo-Automation/graphs/contributors) [<img src="https://img.shields.io/github/stars/Mariem-Ben-Salah/Demo-Automation?style=for-the-badge" alt="STARS" />](https://github.com/Mariem-Ben-Salah/Demo-Automation/stargazers) [<img src="https://img.shields.io/github/forks/Mariem-Ben-Salah/Demo-Automation?style=for-the-badge" alt="FORKS" />](https://github.com/Mariem-Ben-Salah/Demo-Automation/network/members) [<img src="https://img.shields.io/github/issues/Mariem-Ben-Salah/Demo-Automation?style=for-the-badge" alt="ISSUES" />](https://github.com/Mariem-Ben-Salah/Demo-Automation/issues)
 
-# Table of contents
+# Table of Contents
 
-- [Introduction](#Decision-Tree-Recommendation-System)
-- [Repository Structure](#Repository Structure)
-- [Requirements](#Requirements)
-1. [Preprocessing](#Preprocessing)
-- [Data Collection](#Data Collection)
-- [Data Filtering](#Data Filtering)
-2. [Training](#Training)
-- [Data Transformation](#Data Transformation)
-- [Labeling and Annotation](#Labeling and Annotation)
-
+1. [Introduction](#Decision-Tree-Recommendation-System)
+2. [Repository Structure](#Repository-Structure)
+3. [Requirements](#Requirements)
+4. [Preprocessing](#Preprocessing)
+    1. [Data Collection](#data-collection)
+    2. [Data Preprocessing](#data-preprocessing)
+5. [Training](#Training)
+    1. [Data Transformation](#Data-Transformation)
+    2. [Labeling and Annotation](#Labeling-and-Annotation)
 
 # 🌳 Decision-Tree-Recommendation-System 🌳
 

@@ -82,13 +82,21 @@ For that, we performed clustering algorithms :
 
 ■ Mini Batch K-means, with 3 clusters.
 
---> we imported conversion functions from webcolors, mainly css3_hex_to_names and hex_to_rgb.
+--> We imported conversion functions from webcolors, mainly css3_hex_to_names and hex_to_rgb. Both are functions used to convert hexadecimal color codes to other formats
 
+```
+**css3_hex_to_names** is a function that converts a hexadecimal color code to its corresponding CSS3 color name. For example, the function would convert the hexadecimal code **#FF0000** to the CSS3 color name **red**. 
+
+**hex_to_rgb** is a function that converts a hexadecimal color code to its corresponding RGB color values. For example, the function would convert the hexadecimal code **#FF0000** to the RGB values **255, 0, 0**.
+
+
+
+Note that both of these functions are not exclusive to VBA or Google Slides and can be used in other programming languages and platforms as well.
 This processing resulted on creating a *couleur1* column where we stored the dominant color for every image in the training set.
 
 ![colour column](https://i.ibb.co/hD4fF9D/Screenshot-2023-05-02-at-12-04-03.png)
 
-*Likes*
+`Likes`
 
 the `likes` column was generated, which contains the value "favorite" (1) or "not favorite" (0), randomly assigned to simulate user preferences. A user preference profile was then built.
 

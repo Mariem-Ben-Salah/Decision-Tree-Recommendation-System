@@ -7,32 +7,35 @@
 2. [Repository Structure](#Repository-Structure)
 3. [Requirements](#Requirements)
 4. [Preprocessing](#Preprocessing)
-    1. [Data Collection](#data-collection)
-    2. [Data Preprocessing](#data-preprocessing)
+    1. [Data Collection](#Data-Collection)
+    2. [Data Preprocessing](#Data-Preprocessing)
 5. [Training](#Training)
     1. [Data Transformation](#Data-Transformation)
     2. [Labeling and Annotation](#Labeling-and-Annotation)
+    3. [Data Analysis](#Data-Analysis)
+    4. [Data Visualization](#Data-Visualization)
+6. [Testing](#Testing)
 
-# 🌳 Decision-Tree-Recommendation-System 🌳
+# 1. 🌳 Decision-Tree-Recommendation-System 🌳
 
 This project is aimed at developing an image recommendation system based on user preferences, using Decision Trees as the main machine learning model. The project was completed as a part of a Data Mining course and implemented in Python.
 
-# 📂 Repository Structure
+# 2. 📂 Repository Structure
 
 * `project_report` : The final report of the project.
 * `project.ipynb`: contains the whole code for the project.
 
-# 📝 Requirements
+# 3. 📝 Requirements
 
 The packages required to run this project are mentioned in the `project.ipynb` file.
 
 The code for this project is divided into three main parts: preprocessing, training and prediction.
 
-# 1. Preprocessing
+# 4. Preprocessing
 
 The preprocessing part contains functions for collection, cleaning and preprocessing the required data.
 
-## 🐱 🐶 🐵 - Data Collection 
+## 🐱 🐶 🐵 Data Collection 
 
 The project uses Kaggle, an open-licensed image platform, as the source of the dataset. The main criteria for selecting the dataset was finding relevant metadata stored in a separate CSV file along with the pictures. After careful consideration, we chose a collection of cat, dog, and monkey pictures.
 
@@ -53,15 +56,15 @@ After the cleaning, we remained with 469 rows and 8 columns in the csv file :
 - ymax
 ```
 
-## 🧹 - Data Filtering
+## 🧹 Data Filtering
 
 After Preprocessing the dataset, we filtered the relevant information by dropping duplicates in the csv file (using *.drop_duplicate()) and removing ".xml" files that were irrelevant for our case (we made sure to include only the *.jpg* files in our _for_ loop)
 
-# 2. Training
+# 5. Training
 
 The training phase uses the cleaned data to train the machine learning models. It contains functions for transforming and labeling the data.
 
-# 🔄 Data Transformation 
+## 🔄 Data Transformation 
 
 The Transformation part consisted of extracting more useful information from the training set. In order to do that, we had to :
 1. Convert the filtered csv file to a json
@@ -89,7 +92,7 @@ At the end of these steps, the dataframe contained the following columns :
 *Likes*
 the `likes` column was generated, which contains the value "favorite" (1) or "not favorite" (0), randomly assigned to simulate user preferences. A user preference profile was then built.
 
-# 🔍 Labeling and Annotation: 
+## 🔍 Labeling and Annotation: 
 
 Before continuing our analysis, we annotated our data using the LabelEncoder imported from sklearn.preprocessing. 
 ``` python
@@ -105,11 +108,11 @@ In this specific case, the "width" column likely contains text data (e.g. "small
 
 The same process was done for the other columns in the dataframe.
 
-# 📈 Data Analysis: 
+## 📈 Data Analysis: 
 
 To simulate a user who has chosen their favorite images, we generated a "likes" column containing either "favorite" or "not favorite," which we later inserted into our resultframe. This column was created by randomly generating an integer 0 or 1. If the integer is equal to 1, then we add "favorite" to the column and vice versa.
 
-# 📊 Data Visualization: 
+## 📊 Data Visualization: 
 
 We tried to visualize the most relevant information. To do this, we implemented:
 ➔ A plot.bar to visualize the 2 properties "width" and "height":
@@ -120,7 +123,7 @@ We tried to visualize the most relevant information. To do this, we implemented:
 ➔ The user likes images with the dominant color code 12.
 
 
-# 🎉 3. Testing
+# 🎉 6. Testing
 
 This final step aims to fulfill the initial objective of this project, which is to recommend to users images that they will appreciate, based on the processing already done and especially on their preferences. To do this, we decided to work with decision trees.
 

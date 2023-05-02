@@ -3,20 +3,21 @@
 
 # Table of Contents
 
-I. [Introduction](#Introduction)
-    1. [Decision-Tree Recommendation System](#Decision-Tree-Recommendation-System)
-    2. [Repository Structure](#Repository-Structure)
-    3. [Requirements](#Requirements)
-II. What to know
-    1. [Preprocessing](#Preprocessing)
-        1. [Data Collection](#Data-Collection)
-        2. [Data Preprocessing](#Data-Preprocessing)
-    2. [Training](#Training)
-        1. [Data Transformation](#Data-Transformation)
-        2. [Labeling and Annotation](#Labeling-and-Annotation)
-        3. [Data Analysis](#Data-Analysis)
-        4. [Data Visualization](#Data-Visualization)
-    3. [Testing](#Testing)
+I. [Introduction](#introduction)
+    1. [Decision-Tree Recommendation System](#decision-tree-recommendation-system)
+    2. [Repository Structure](#repository-structure)
+    3. [Requirements](#requirements)
+    
+II. [What to know](#What-to-know)
+    1. [Preprocessing](#preprocessing)
+        1. [Data Collection](#data-collection)
+        2. [Data Filtering](#data-filtering)
+    2. [Training](#training)
+        1. [Data Transformation](#data-transformation)
+        2. [Labeling and Annotation](#labeling-and-annotation)
+        3. [Data Analysis](#data-analysis)
+        4. [Data Visualization](#data-visualization)
+    3. [Testing](#testing)
 
 # I. Introduction
 
@@ -33,7 +34,7 @@ This project is aimed at developing an image recommendation system based on user
 
 The packages required to run this project are mentioned in the `project.ipynb` file.
 
-## II. What you need to know
+# II. What you need to know
 
 The code for this project is divided into three main parts: preprocessing, training and prediction.
 
@@ -104,17 +105,17 @@ For that, we performed clustering algorithms :
 
 This processing resulted on creating a *couleur1* column where we stored the dominant color for every image in the training set.
 
-[![colour column](https://ibb.co/vZTY4qZ)]
+[![colour column](https://i.ibb.co/hD4fF9D/Screenshot-2023-05-02-at-12-04-03.png)]
 
 *Likes*
 
 the `likes` column was generated, which contains the value "favorite" (1) or "not favorite" (0), randomly assigned to simulate user preferences. A user preference profile was then built.
 
-[![Likes column](https://ibb.co/6NzXHKR)]
+[![Likes column](https://i.ibb.co/ZN52BQ6/Screenshot-2023-05-02-at-12-03-53.png)]
 
 At the end of these steps, the dataframe contained the following columns : 
 
-[![dataframe after the added columns](https://ibb.co/31wHhQh)]
+[![dataframe after the added columns](https://i.ibb.co/xhyQ5d5/Screenshot-2023-05-02-at-12-04-20.png)]
 
 
 ### 🔍 Labeling and Annotation: 

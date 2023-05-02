@@ -2,7 +2,7 @@
 
 # I. Introduction
 
-## 1. 🌳 Decision-Tree RecommendationSystem 🌳
+## 1. 🌳 Decision-Tree Recommendation System 🌳
 
 This project is aimed at developing an image recommendation system based on user preferences, using Decision Trees as the main machine learning model. The project was completed as a part of a Data Mining course and implemented in Python.
 
@@ -68,13 +68,13 @@ For that, we created two new columns in the dataframe :
 
 ■ tailleY = ymax - ymin.
 
-This processing gave us a lot of distinct values, and we realized that they would be difficult to manage with label encoding. Therefore, we found it judicious to divide the *tailleX* and *tailleY* sizes into 3 categories:
+--> This processing gave us a lot of distinct values, and we realized that they would be difficult to manage with label encoding. Therefore, we found it judicious to divide the *tailleX* and *tailleY* sizes into 3 categories:
 
+```
 ■ Object size less than 30% of the image size: small ⇒ value 0 assigned.
-
 ■ Object size between 30% and 70% of the image size: medium ⇒ value 1 assigned.
-
 ■ Object size greater than 70% of the image size: large ⇒ value 2 assigned.
+```
 
 `Dominant Colors`
 

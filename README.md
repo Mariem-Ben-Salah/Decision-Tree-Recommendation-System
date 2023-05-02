@@ -3,20 +3,24 @@
 
 # Table of Contents
 
-1. [Introduction](#Decision-Tree-Recommendation-System)
-2. [Repository Structure](#Repository-Structure)
-3. [Requirements](#Requirements)
-4. [Preprocessing](#Preprocessing)
-    1. [Data Collection](#Data-Collection)
-    2. [Data Preprocessing](#Data-Preprocessing)
-5. [Training](#Training)
-    1. [Data Transformation](#Data-Transformation)
-    2. [Labeling and Annotation](#Labeling-and-Annotation)
-    3. [Data Analysis](#Data-Analysis)
-    4. [Data Visualization](#Data-Visualization)
-6. [Testing](#Testing)
+I. [Introduction](#Introduction)
+    1. [Decision-Tree Recommendation System](#Decision-Tree-Recommendation-System)
+    2. [Repository Structure](#Repository-Structure)
+    3. [Requirements](#Requirements)
+II. What to know
+    1. [Preprocessing](#Preprocessing)
+        1. [Data Collection](#Data-Collection)
+        2. [Data Preprocessing](#Data-Preprocessing)
+    2. [Training](#Training)
+        1. [Data Transformation](#Data-Transformation)
+        2. [Labeling and Annotation](#Labeling-and-Annotation)
+        3. [Data Analysis](#Data-Analysis)
+        4. [Data Visualization](#Data-Visualization)
+    3. [Testing](#Testing)
 
-## 1. 🌳 Decision-Tree-Recommendation-System 🌳
+# I. Introduction
+
+## 1. 🌳 Decision-Tree RecommendationSystem 🌳
 
 This project is aimed at developing an image recommendation system based on user preferences, using Decision Trees as the main machine learning model. The project was completed as a part of a Data Mining course and implemented in Python.
 
@@ -29,9 +33,11 @@ This project is aimed at developing an image recommendation system based on user
 
 The packages required to run this project are mentioned in the `project.ipynb` file.
 
+## II. What you need to know
+
 The code for this project is divided into three main parts: preprocessing, training and prediction.
 
-## 4. Preprocessing
+## 1. Preprocessing
 
 The preprocessing part contains functions for collection, cleaning and preprocessing the required data.
 
@@ -60,7 +66,7 @@ After the cleaning, we remained with 469 rows and 8 columns in the csv file :
 
 After Preprocessing the dataset, we filtered the relevant information by dropping duplicates in the csv file (using *.drop_duplicate()) and removing ".xml" files that were irrelevant for our case (we made sure to include only the *.jpg* files in our _for_ loop)
 
-## 5. Training
+## 2. Training
 
 The training phase uses the cleaned data to train the machine learning models. It contains functions for transforming and labeling the data.
 
@@ -72,7 +78,7 @@ The Transformation part consisted of extracting more useful information from the
 2. Create a data frame from the loaded json information
 3. Choose the informations that we want to extract : we decided ended up choosing `the animal's size inside the image` and `the dominating colors in the picture`. 
 
-*Animal's size inside the image*
+`Animal's size inside the image
 
 For that, we created two new columns in the dataframe :
 
@@ -88,7 +94,7 @@ This processing gave us a lot of distinct values, and we realized that they woul
 
 ■ Object size greater than 70% of the image size: large ⇒ value 2 assigned.
 
-*Dominant Colors*
+`Dominant Colors`
 
 For that, we performed clustering algorithms :
 
@@ -141,7 +147,7 @@ We tried to visualize the most relevant information. To do this, we implemented:
 
 ➔ A plot.bar to visualize the most frequently occurring dominant color
 
-[![results of the plot.bar](https://ibb.co/wycn7Dq)]
+[![results of the plot.bar](https://i.ibb.co/Jn3YqXT/Screenshot-2023-05-02-at-12-05-35.png)]
 
 ➔ In this example, the user tends to like images with medium width and medium height.
 
@@ -150,7 +156,7 @@ We tried to visualize the most relevant information. To do this, we implemented:
 ➔ The user likes images with the dominant color code 12.
 
 
-## 🎉 6. Testing
+## 🎉 3. Testing
 
 This final step aims to fulfill the initial objective of this project, which is to recommend to users images that they will appreciate, based on the processing already done and especially on their preferences. To do this, we decided to work with decision trees.
 

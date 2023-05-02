@@ -4,31 +4,18 @@
 # Table of Contents
 
 I. [Introduction](#introduction)
-
     1. [Decision-Tree Recommendation System](#decision-tree-recommendation-system)
-    
     2. [Repository Structure](#repository-structure)
-    
     3. [Requirements](#requirements)
-    
 II. [What to know](#What-to-know)
-
     1. [Preprocessing](#preprocessing)
-    
         1. [Data Collection](#data-collection)
-        
         2. [Data Filtering](#data-filtering)
-        
     2. [Training](#training)
-    
         1. [Data Transformation](#data-transformation)
-        
         2. [Labeling and Annotation](#labeling-and-annotation)
-        
         3. [Data Analysis](#data-analysis)
-        
         4. [Data Visualization](#data-visualization)
-        
     3. [Testing](#testing)
 
 # I. Introduction
@@ -117,17 +104,17 @@ For that, we performed clustering algorithms :
 
 This processing resulted on creating a *couleur1* column where we stored the dominant color for every image in the training set.
 
-[![colour column](https://i.ibb.co/hD4fF9D/Screenshot-2023-05-02-at-12-04-03.png)]
+![colour column](https://i.ibb.co/hD4fF9D/Screenshot-2023-05-02-at-12-04-03.png)
 
 *Likes*
 
 the `likes` column was generated, which contains the value "favorite" (1) or "not favorite" (0), randomly assigned to simulate user preferences. A user preference profile was then built.
 
-[![Likes column](https://i.ibb.co/ZN52BQ6/Screenshot-2023-05-02-at-12-03-53.png)]
+![Likes column](https://i.ibb.co/ZN52BQ6/Screenshot-2023-05-02-at-12-03-53.png)
 
 At the end of these steps, the dataframe contained the following columns : 
 
-[![dataframe after the added columns](https://i.ibb.co/xhyQ5d5/Screenshot-2023-05-02-at-12-04-20.png)]
+![dataframe after the added columns](https://i.ibb.co/xhyQ5d5/Screenshot-2023-05-02-at-12-04-20.png)
 
 
 ### 🔍 Labeling and Annotation: 
@@ -160,7 +147,7 @@ We tried to visualize the most relevant information. To do this, we implemented:
 
 ➔ A plot.bar to visualize the most frequently occurring dominant color
 
-[![results of the plot.bar](https://i.ibb.co/Jn3YqXT/Screenshot-2023-05-02-at-12-05-35.png)]
+![results of the plot.bar](https://i.ibb.co/Jn3YqXT/Screenshot-2023-05-02-at-12-05-35.png)
 
 ➔ In this example, the user tends to like images with medium width and medium height.
 

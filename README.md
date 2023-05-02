@@ -2,16 +2,12 @@
 
 # I. Introduction
 
-## 1. 🌳 Decision-Tree Recommendation System 🌳
-
-This project is aimed at developing an image recommendation system based on user preferences, using Decision Trees as the main machine learning model. The project was completed as a part of a Data Mining course and implemented in Python.
-
-## 2. 📂 Repository Structure
+## 1. 📂 Repository Structure
 
 * `project_report` : The final report of the project.
 * `project.ipynb`: contains the whole code for the project.
 
-## 3. 📝 Requirements
+## 2. 📝 Requirements
 
 The packages required to run this project are mentioned in the `project.ipynb` file.
 

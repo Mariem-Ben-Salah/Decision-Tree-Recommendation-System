@@ -6,12 +6,12 @@
 [Introduction](#Decision-Tree-Recommendation-System)
 [Repository Structure](#Repository Structure)
 [Requirements](#Requirements)
-[Preprocessing](#Preprocessing)
-[Data Collection](##Data Collection)
-[Data Filtering](##Data Filtering)
-[Training](#Training)
-[Data Transformation](##Data Transformation)
-[Labeling and Annotation](##Labeling and Annotation)
+1. [Preprocessing](#Preprocessing)
+- [Data Collection](##Data Collection)
+- [Data Filtering](##Data Filtering)
+2. [Training](#Training)
+- [Data Transformation](##Data Transformation)
+- [Labeling and Annotation](##Labeling and Annotation)
 
 
 🌳 # Decision-Tree-Recommendation-System 🌳

@@ -7,11 +7,11 @@
 [Repository Structure](#Repository Structure)
 [Requirements](#Requirements)
 1. [Preprocessing](#Preprocessing)
-- [Data Collection](##Data Collection)
-- [Data Filtering](##Data Filtering)
+- [Data Collection](#Data Collection)
+- [Data Filtering](#Data Filtering)
 2. [Training](#Training)
-- [Data Transformation](##Data Transformation)
-- [Labeling and Annotation](##Labeling and Annotation)
+- [Data Transformation](#Data Transformation)
+- [Labeling and Annotation](#Labeling and Annotation)
 
 
 🌳 # Decision-Tree-Recommendation-System 🌳

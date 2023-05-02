@@ -14,16 +14,16 @@
 - [Labeling and Annotation](#Labeling and Annotation)
 
 
-🌳 # Decision-Tree-Recommendation-System 🌳
+# 🌳 Decision-Tree-Recommendation-System 🌳
 
 This project is aimed at developing an image recommendation system based on user preferences, using Decision Trees as the main machine learning model. The project was completed as a part of a Data Mining course and implemented in Python.
 
-📂 # Repository Structure
+# 📂 Repository Structure
 
 * `project_report` : The final report of the project.
 * `project.ipynb`: contains the whole code for the project.
 
-📝 # Requirements
+# 📝 Requirements
 
 The packages required to run this project are mentioned in the `project.ipynb` file.
 
@@ -33,7 +33,7 @@ The code for this project is divided into three main parts: preprocessing, train
 
 The preprocessing part contains functions for collection, cleaning and preprocessing the required data.
 
-## - 🐱 🐶 🐵 Data Collection 
+## 🐱 🐶 🐵 - Data Collection 
 
 The project uses Kaggle, an open-licensed image platform, as the source of the dataset. The main criteria for selecting the dataset was finding relevant metadata stored in a separate CSV file along with the pictures. After careful consideration, we chose a collection of cat, dog, and monkey pictures.
 
@@ -54,7 +54,7 @@ After the cleaning, we remained with 469 rows and 8 columns in the csv file :
 - ymax
 ```
 
-## -  🧹 Data Filtering
+## 🧹 - Data Filtering
 
 After Preprocessing the dataset, we filtered the relevant information by dropping duplicates in the csv file (using *.drop_duplicate()) and removing ".xml" files that were irrelevant for our case (we made sure to include only the *.jpg* files in our _for_ loop)
 
@@ -90,7 +90,7 @@ At the end of these steps, the dataframe contained the following columns :
 *Likes*
 the `likes` column was generated, which contains the value "favorite" (1) or "not favorite" (0), randomly assigned to simulate user preferences. A user preference profile was then built.
 
-🔍 # Labeling and Annotation: 
+# 🔍 Labeling and Annotation: 
 
 Before continuing our analysis, we annotated our data using the LabelEncoder imported from sklearn.preprocessing. 
 ``` python
@@ -106,11 +106,11 @@ In this specific case, the "width" column likely contains text data (e.g. "small
 
 The same process was done for the other columns in the dataframe.
 
-📈 # Data Analysis: 
+# 📈 Data Analysis: 
 
 To simulate a user who has chosen their favorite images, we generated a "likes" column containing either "favorite" or "not favorite," which we later inserted into our resultframe. This column was created by randomly generating an integer 0 or 1. If the integer is equal to 1, then we add "favorite" to the column and vice versa.
 
-📊 # Data Visualization: 
+# 📊 Data Visualization: 
 
 We tried to visualize the most relevant information. To do this, we implemented:
 ➔ A plot.bar to visualize the 2 properties "width" and "height":
